@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'FutureWidget.dart';
-import 'MyUtil.dart';
+import 'package:flutter_lab/ch8/future_wedget.dart';
+import 'package:flutter_lab/ch8/stream_widget.dart';
+import 'my_util.dart';
 
 
 void main() => runApp(MyApp());
@@ -13,8 +14,8 @@ class MyAppState extends State<MyApp> {
   int _selectedIndex = 0;
 
   List<Widget> _widgetOptions = <Widget>[
-    Text('one page'),
-    Text('two page')
+    FutureWidget(),
+    StreamWidget()
   ];
 
   void _onItemTapped(int index) {
@@ -40,11 +41,11 @@ class MyAppState extends State<MyApp> {
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
-                title: Text('Future'),
+                label: 'Future'
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
-                title: Text('Stream'),
+                label: 'Stream'
               )
             ],
             currentIndex: _selectedIndex,
